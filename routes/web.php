@@ -26,3 +26,5 @@ Route::get('/holaMundo', function(){
 Route::get('/foto/{numero?}', function($numero ='sin número'){
     return 'Galeria de fotos. Foto Numero: '.$numero;
 })->where('numero','[0-9]+');
+
+Route::view('prueba','pruebaRuta', ['nombre'=>'Heimys']);
