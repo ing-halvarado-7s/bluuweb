@@ -28,3 +28,6 @@ Route::get('/foto/{numero?}', function($numero ='sin número'){
 })->where('numero','[0-9]+');
 
 Route::view('prueba','pruebaRuta', ['nombre'=>'Heimys']);
+
+Route::view('profesor', 'contenidoDinamico/profesor');
+Route::view('alumno', 'contenidoDinamico/alumno');
