@@ -29,5 +29,9 @@ Route::get('/foto/{numero?}', function($numero ='sin número'){
 
 Route::view('prueba','pruebaRuta', ['nombre'=>'Heimys']);
 
-Route::view('profesor', 'contenidoDinamico/profesor');
-Route::view('alumno', 'contenidoDinamico/alumno');
+Route::get('profesor', function(){
+    return view('contenidoDinamico/profesor');
+})->name('profesor');
+Route::get('alumno', function(){
+    return view('contenidoDinamico/alumno');
+} )->name('alumno');
