@@ -11,27 +11,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'MenuController@inicio')->name('inicio');
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/holaMundo', function(){
-    return 'Hola Mundo';
-});
+Route::get('/holaMundo', 'MenuController@holaMundo');
 
-Route::get('/foto/{numero?}', function($numero ='sin número'){
-    return 'Galeria de fotos. Foto Numero: '.$numero;
-})->where('numero','[0-9]+');
+Route::get('/foto/{numero?}', 'MenuController@foto');
 
-Route::view('prueba','pruebaRuta', ['nombre'=>'Heimys']);
+Route::get('prueba','MenuController@prueba');
 
-Route::get('profesor', function(){
-    return view('contenidoDinamico/profesor');
-})->name('profesor');
-Route::get('alumno', function(){
-    return view('contenidoDinamico/alumno');
-} )->name('alumno');
+Route::get('profesor', 'MenuController@profesor')->name('profesor');
+
+Route::get('/alumno', 'MenuController@alumno')->name('alumno');
