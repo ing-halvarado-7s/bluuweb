@@ -66,12 +66,13 @@
     <body>
     <div class="flex-center position-ref full-height">
         <div class="content">
-            <div class="title m-b-md">
-                @yield('contenido')
-            </div>
+            
+                <h1>@yield('contenido')</h1>
+            
             <div class="links">
             <a href="{{ route('profesor') }}">Profesor</a>
             <a href="{{ route('alumno') }}">Alumno</a>
+            <a href="{{ route('nosotros') }}">Nosotros</a>
                 </div>
         </div>
     </div>

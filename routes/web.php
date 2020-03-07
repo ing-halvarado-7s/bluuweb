@@ -26,3 +26,9 @@ Route::get('prueba','MenuController@prueba');
 Route::get('profesor', 'MenuController@profesor')->name('profesor');
 
 Route::get('/alumno', 'MenuController@alumno')->name('alumno');
+
+Route::get('nosotros/{nombre?}',function($nombre=null){
+    $familia = ['Rafael','Marina','Carlos','Heimys','Mariavictoria'];
+    //return view('contenidoDinamico/nosotros',[familia=>$familia,nombre=>$nombre]);
+    return view('contenidoDinamico/nosotros',compact('familia','nombre'));
+})->name('nosotros');
