@@ -15,7 +15,7 @@ class MenuController extends Controller
     }
     
     
-     function foto($numero ='sin número'){
+    function foto($numero ='sin número'){
         return 'Galeria de fotos. Foto Numero: '.$numero;//Mostrar valor de parámetro en un mensaje
     }
     
@@ -31,5 +31,10 @@ class MenuController extends Controller
         return view('contenidoDinamico.alumno');
     }
     
+    function nosotros($nombre=null){
+        $familia = ['Rafael','Marina','Carlos','Heimys','Mariavictoria'];
+        //return view('contenidoDinamico/nosotros',[familia=>$familia,nombre=>$nombre]);
+        return view('contenidoDinamico/nosotros',compact('familia','nombre'));
+    }
 
 }

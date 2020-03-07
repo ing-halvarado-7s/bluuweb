@@ -3,7 +3,7 @@
 @section('contenido')
     Mi familia con la que vivo <br>
     @foreach ($familia as $item)
-        <a href="{{route('nosotros',$item)}}" class="">{{$item}}</a><br>
+        <a href="{{route('nosotros',$item)}}" class="">{{$item}}</a>&nbsp; &nbsp;
     @endforeach
     @if (!empty($nombre))
         @switch($nombre)
