@@ -4,10 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
+use App\Nota;
+
 class MenuController extends Controller
 {
     public function inicio(){
-        return view('welcome');
+        $notas = Nota::all();
+        return view('welcome',compact('notas'));
     }
 
     function holaMundo(){
