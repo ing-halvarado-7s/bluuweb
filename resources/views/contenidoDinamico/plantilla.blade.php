@@ -12,7 +12,7 @@
   </head>
   <body>
     <div class="container my-5">
-        <a href="{{ route('home') }}" class="btn btn-primary">Inicio</a>
+        <a href="{{ route('inicio') }}" class="btn btn-primary">Inicio</a>
         <a href="{{ route('profesor') }}" class="btn btn-primary">Profesor</a>
         <a href="{{ route('alumno') }}" class="btn btn-primary">Alumno</a>
         <a href="{{ route('nosotros') }}" class="btn btn-primary">Nosotros</a>

@@ -17,6 +17,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/inicio', 'MenuController@inicio')->name('inicio');
+
 Route::get('/holaMundo', 'MenuController@holaMundo');
 
 Route::get('/foto/{numero?}', 'MenuController@foto');
