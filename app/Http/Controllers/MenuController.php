@@ -36,16 +36,16 @@ class MenuController extends Controller
         return back()->with('mensaje','Nota agregada');
     }
 
-    function guardar(Request $request){
+    function guardar(Request $request, $id){
         // return $request->all();
         $request->validate([
             'nombre'=>'required', 'descripcion'=>'required'
         ]);
-        $notaNueva = new Nota;
-        $notaNueva->nombre = $request->nombre;
-        $notaNueva->descripcion = $request->descripcion;
-        $notaNueva->save();
-        return back()->with('mensaje','Nota agregada');
+        $notaActualizada = Nota::finOrFail($id);
+        $notaActualizada->nombre = $request->nombre;
+        $notaActualizada->descripcion = $request->descripcion;
+        $notaActualizada->save();
+        return back()->with('mensaje','Nota actualizada');
     }
 
     

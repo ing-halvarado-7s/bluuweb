@@ -20,6 +20,6 @@
 
         <input type="text" name="nombre" class="form-control mb-2" placeholder="Nombre"  value="{{$notas->nombre}}">
         <input type="text" name="descripcion" class="form-control mb-2" placeholder="Descripción" value="{{$notas->descripcion}}">
-        <button type="submit" class="btn btn-primary btn-block">Agregar</button>
+        <button type="submit" class="btn btn-warning btn-block">Editar</button>
     </form>
 @endsection
