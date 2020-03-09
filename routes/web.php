@@ -19,6 +19,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/detalle/{id}', 'MenuController@detalle')->name('notas.detalle');
 
+Route::get('/editar/{id}', 'MenuController@editar')->name('notas.editar');
+
+Route::put('/editar/{id}', 'MenuController@guardar')->name('notas.guardar');
+
 Route::post('/', 'MenuController@crear')->name('notas.crear');
 
 Route::get('/', 'MenuController@inicio')->name('inicio');
