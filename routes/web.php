@@ -21,7 +21,6 @@ Route::get('/detalle/{id}', 'MenuController@detalle')->name('notas.detalle');
 
 Route::post('/', 'MenuController@crear')->name('notas.crear');
 
-
 Route::get('/', 'MenuController@inicio')->name('inicio');
 
 Route::get('/holaMundo', 'MenuController@holaMundo');

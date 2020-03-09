@@ -2,15 +2,26 @@
 
 @section('contenido')
         @if (session('mensaje'))
-            <div class="alert alert-success" role="alert">
-                {{ session('mensaje') }}
-            </div>  
-            
+        <div class="alert alert-success" role="alert">
+            {{ session('mensaje') }}
+        </div>  
+
         @endif
     
         <h1>Notas</h1>
         <form action="{{route('notas.crear')}}" method="POST">
             @csrf
+            @error ('nombre')
+                <div class="alert alert-danger" role="alert">
+                    Nombre es un Campo Obligatorio
+                </div>  
+            @enderror
+            @error ('descripcion')
+                <div class="alert alert-danger" role="alert">
+                    Descripción es un Campo Obligatorio
+                </div>  
+            @enderror
+
             <input type="text" name="nombre" class="form-control mb-2" placeholder="Nombre">
             <input type="text" name="descripcion" class="form-control mb-2" placeholder="Descripción">
             <button type="submit" class="btn btn-primary btn-block">Agregar</button>

@@ -21,6 +21,9 @@ class MenuController extends Controller
 
     function crear(Request $request){
         // return $request->all();
+        $request->validate([
+            'nombre'=>'required', 'descripcion'=>'required'
+        ]);
         $notaNueva = new Nota;
         $notaNueva->nombre = $request->nombre;
         $notaNueva->descripcion = $request->descripcion;
