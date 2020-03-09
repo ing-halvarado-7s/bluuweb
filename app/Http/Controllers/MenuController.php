@@ -16,7 +16,7 @@ class MenuController extends Controller
 
     function detalle($id){
         $notas = Nota::findOrfail($id);
-        return view('notas.detalle',\compact('notas'));
+        return view('notas.detalle',compact('notas'));
     }
 
 
