@@ -14,11 +14,18 @@ class MenuController extends Controller
         return view('welcome',compact('notas'));
     }
 
+    function detalle($id){
+        $notas = Nota::findOrfail($id);
+        return view('notas.detalle',\compact('notas'));
+    }
+
+
     function holaMundo(){
         return 'Hola Mundo';
     }
     
     
+
     function foto($numero ='sin número'){
         return 'Galeria de fotos. Foto Numero: '.$numero;//Mostrar valor de parámetro en un mensaje
     }

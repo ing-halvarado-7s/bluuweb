@@ -17,7 +17,7 @@
                 @foreach ($notas as $item)
                 <tr>
                     <th scope="row">{{$item->id}}</th>
-                    <td>{{$item->nombre}}</td>
+                <td><a href="{{route('notas.detalle',$item)}}">{{$item->nombre}}</a></td>
                     <td>{{$item->descripcion}}</td>
                     <td> F1</td>
                 </tr> 
