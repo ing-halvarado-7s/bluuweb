@@ -17,7 +17,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/{id}', 'MenuController@detalle')->name('inicio');
+Route::get('/{id}', 'MenuController@detalle')->name('notas.detalle');
 
 Route::get('/', 'MenuController@inicio')->name('inicio');
 
