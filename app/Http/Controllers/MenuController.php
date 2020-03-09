@@ -19,6 +19,17 @@ class MenuController extends Controller
         return view('notas.detalle',compact('notas'));
     }
 
+    function crear(Request $request){
+        // return $request->all();
+        $notaNueva = new Nota;
+        $notaNueva->nombre = $request->nombre;
+        $notaNueva->descripcion = $request->descripcion;
+        $notaNueva->save();
+        return back()->with('mensaje','Nota agregada');
+    }
+
+
+
 
     function holaMundo(){
         return 'Hola Mundo';
