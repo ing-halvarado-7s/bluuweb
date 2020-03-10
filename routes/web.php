@@ -12,6 +12,16 @@
 */
 Auth::routes();
 
+
+
+// Pelicula
+Route::view('plantilla','plantilla.plantilla');
+
+// Fin de Pelicula
+
+
+
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/', 'MenuController@inicio')->name('inicio');

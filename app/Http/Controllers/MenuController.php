@@ -9,7 +9,7 @@ use Redirect;
 class MenuController extends Controller
 {
     public function inicio(){
-        $notas = Nota::pagination(4);
+        $notas = Nota::paginate(4);
         return view('welcome',compact('notas'));
     }
 
