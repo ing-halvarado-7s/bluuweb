@@ -44,7 +44,14 @@
                     <th scope="row">{{$item->id}}</th>
                 <td><a href="{{route('notas.detalle',$item)}}">{{$item->nombre}}</a></td>
                     <td>{{$item->descripcion}}</td>
-                <td><a href="{{route('notas.editar',$item)}}" class="btn btn-warning btn-sm">Editar</a></td>
+                <td>
+                    <a href="{{route('notas.editar',$item)}}" class="btn btn-warning btn-sm">Editar</a>
+                <form class="d-inline" action="{{route('notas.eliminar',$item)}}" method="POST">
+                        @method('DELETE')
+                        @csrf
+                        <button class="btn btn-danger btn-sm" type="submit">Eliminar</button>
+                    </form>
+                </td>
                 </tr> 
                 @endforeach
             </tbody>

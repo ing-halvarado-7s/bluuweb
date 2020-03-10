@@ -10,22 +10,21 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', 'MenuController@inicio')->name('inicio');
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/', 'MenuController@inicio')->name('inicio');
+
 Route::get('/detalle/{id}', 'MenuController@detalle')->name('notas.detalle');
+
+Route::post('/', 'MenuController@crear')->name('notas.crear');
 
 Route::get('/editar/{id}', 'MenuController@editar')->name('notas.editar');
 
 Route::put('/editar/{id}', 'MenuController@guardar')->name('notas.guardar');
 
-Route::post('/', 'MenuController@crear')->name('notas.crear');
-
-Route::get('/', 'MenuController@inicio')->name('inicio');
+Route::delete('/eliminar/{id}', 'MenuController@eliminar')->name('notas.eliminar');
 
 Route::get('/holaMundo', 'MenuController@holaMundo');
 

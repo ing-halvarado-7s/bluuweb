@@ -2,15 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
-
 use App\Nota;
+use Illuminate\Http\Request;
+use Redirect;
 
 class MenuController extends Controller
 {
     public function inicio(){
-        $notas = Nota::all();
+        $notas = Nota::pagination(4);
         return view('welcome',compact('notas'));
     }
 
@@ -41,17 +40,20 @@ class MenuController extends Controller
         $request->validate([
             'nombre'=>'required', 'descripcion'=>'required'
         ]);
-        $notaActualizada = Nota::finOrFail($id);
+        $notaActualizada = Nota::findOrFail($id);
         $notaActualizada->nombre = $request->nombre;
         $notaActualizada->descripcion = $request->descripcion;
         $notaActualizada->save();
-        return back()->with('mensaje','Nota actualizada');
+        return Redirect::to('/')->with('mensaje','Nota modificada');
+        // return Redirect::to('http://127.0.0.1:8000/')->with('mensaje','Nota modificada');
     }
 
-    
-
-
-
+    function eliminar($id){
+              
+        $notaEliminada = Nota::findOrFail($id);
+        $notaEliminada->delete();
+        return back()->with('mensaje','Nota eliminada');
+    }
 
     function holaMundo(){
         return 'Hola Mundo';
