@@ -17,6 +17,10 @@ Auth::routes();
 // Pelicula
 Route::view('plantilla','plantilla.plantilla');
 
+Route::view('pindex','pelicula.index')->name('pindex');
+
+
+
 // Fin de Pelicula
 
 
