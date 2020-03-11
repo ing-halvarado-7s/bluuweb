@@ -1,6 +1,12 @@
 <?php
 Auth::routes();
 
+// Rutas para empleado
+Route::get('empleadoIndex','EmpleadoController@index')->name('empleadoIndex');
+
+Route::get('empleadoDetalle/{id}','EmpleadoController@detalle')->name('empleadoDetalle');
+
+
 // Pelicula
 Route::view('plantilla','plantilla.plantilla');
 
