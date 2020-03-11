@@ -1,8 +1,18 @@
 @extends('plantilla.plantilla')
 
 @section('contenido')
+    @if (session('mensajeI'))
+    <div class="alert alert-primary" role="alert">
+        {{session('mensajeI')}}
+       <button type="button" class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span></button>
+   </div>
+    @else
+        
+    @endif
     <h1>Listado empleado</h1>
-
+    <form action="{{route('empleadoVistaIncluir')}}">
+        <button type="submit" class="btn btn-primary">Agregar</button>
+    </form>
     <table class="table">
         
         <thead class="thead-dark">
@@ -23,9 +33,13 @@
                         <form action="{{ route('empleadoDetalle',$item->id) }}">
                             <button type="submit" class="btn btn-success btn-sm">Detalle</button>
                         </form>
+                        <form action="{{ route('empleadoModificar',$item->id) }}">
+                            <button type="submit" class="btn btn-warning btn-sm">Modificar</button>
+                        </form>
                     </td>
                 </tr>
             @endforeach
         </tbody>
       </table>
+      {{$empleados->links()}}
 @endsection

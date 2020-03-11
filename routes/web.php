@@ -6,6 +6,14 @@ Route::get('empleadoIndex','EmpleadoController@index')->name('empleadoIndex');
 
 Route::get('empleadoDetalle/{id}','EmpleadoController@detalle')->name('empleadoDetalle');
 
+Route::get('empleadoVistaIncluir','EmpleadoController@vistaIncluir')->name('empleadoVistaIncluir');
+
+Route::post('empleadoIncluir','EmpleadoController@incluir')->name('empleadoIncluir');
+
+Route::get('empleadoVistaModificar','EmpleadoController@vistaModificar')->name('empleadoVistaModificar');
+
+Route::put('empleadoModificar','EmpleadoController@modificar')->name('empleadoModificar');
+
 
 // Pelicula
 Route::view('plantilla','plantilla.plantilla');
