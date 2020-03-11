@@ -32,7 +32,7 @@
         <button type="button" class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span></button>
     </div>
     @enderror
-    <form action="{{route('empleadoIncluir')}}" placeholder="" method="POST">
+    <form action="{{route('empleadoIncluir')}}"  method="POST">
     @csrf
         <div class="form-group ">
         <label for="" class="col-sm-2 col-form-label"><strong>Cédula</strong></label>

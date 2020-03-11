@@ -10,9 +10,11 @@ Route::get('empleadoVistaIncluir','EmpleadoController@vistaIncluir')->name('empl
 
 Route::post('empleadoIncluir','EmpleadoController@incluir')->name('empleadoIncluir');
 
-Route::get('empleadoVistaModificar','EmpleadoController@vistaModificar')->name('empleadoVistaModificar');
+Route::get('empleadoVistaModificar/{id}','EmpleadoController@vistaModificar')->name('empleadoVistaModificar');
 
-Route::put('empleadoModificar','EmpleadoController@modificar')->name('empleadoModificar');
+Route::put('empleadoModificar/{id}','EmpleadoController@modificar')->name('empleadoModificar');
+
+Route::delete('empleadoEliminar/{id}','EmpleadoController@eliminar')->name('empleadoEliminar');
 
 
 // Pelicula
