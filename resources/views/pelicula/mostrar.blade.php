@@ -2,7 +2,7 @@
 
 @section('contenido')
 
-        <h1>Listado de Películas</h1>
+        <h1>Consultar Película</h1>
 
         <table class="table">
         <thead>
@@ -16,7 +16,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($peliculas as $peli)
+            
             <tr>
                 <th scope="row">{{$peli->id}}</th>
                 <td><a href="{{route('pelicula.mostrar')}}">{{$peli->titulo}}</a></td>
@@ -25,7 +25,7 @@
                 <td>{{$peli->actrizPrincipal}}</td>
                 <td>Acciones</td>
             </tr>
-            @endforeach
+            
         </tbody>
         </table>
         {{$peliculas->links()}}
