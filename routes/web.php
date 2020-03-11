@@ -1,18 +1,5 @@
 <?php
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 Auth::routes();
-
-
 
 // Pelicula
 Route::view('plantilla','plantilla.plantilla');
@@ -20,6 +7,16 @@ Route::view('plantilla','plantilla.plantilla');
 Route::get('pindex','PeliculaController@index')->name('pindex');
 
 Route::get('pmostrar/{id}','PeliculaController@mostrar')->name('pmostrar');
+
+Route::get('pVistaIncluir','PeliculaController@mostrarVistaIncluir')->name('pVistaIncluir');
+
+Route::post('pIncluir','PeliculaController@incluir')->name('pIncluir');
+
+Route::get('pVistaModificar/{id}','PeliculaController@mostrarVistaModificar')->name('pVistaModificar');
+
+Route::put('pModificar/{id}','PeliculaController@modificar')->name('pModificar');
+
+Route::delete('pEliminar/{id}','PeliculaController@eliminar')->name('pEliminar');
 
 
 

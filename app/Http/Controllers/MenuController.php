@@ -18,21 +18,21 @@ class MenuController extends Controller
         return view('notas.detalle',compact('notas'));
     }
 
-    function editar($id){
-        $notas = Nota::findOrfail($id);
-        return view('notas.editar',compact('notas'));
-    }
-
+    
     function crear(Request $request){
         // return $request->all();
         $request->validate([
             'nombre'=>'required', 'descripcion'=>'required'
-        ]);
-        $notaNueva = new Nota;
-        $notaNueva->nombre = $request->nombre;
-        $notaNueva->descripcion = $request->descripcion;
-        $notaNueva->save();
-        return back()->with('mensaje','Nota agregada');
+            ]);
+            $notaNueva = new Nota;
+            $notaNueva->nombre = $request->nombre;
+            $notaNueva->descripcion = $request->descripcion;
+            $notaNueva->save();
+            return back()->with('mensaje','Nota agregada');
+        }
+    function editar($id){
+        $notas = Nota::findOrfail($id);
+        return view('notas.editar',compact('notas'));
     }
 
     function guardar(Request $request, $id){
