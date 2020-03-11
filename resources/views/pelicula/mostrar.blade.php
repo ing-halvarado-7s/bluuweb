@@ -9,25 +9,22 @@
             <tr>
             <th scope="col">#</th>
             <th scope="col">Título</th>
-            <th scope="col">Tipo</th>
+            <th scope="col">Género</th>
             <th scope="col">Actor Principal</th>
             <th scope="col">Actriz Principal</th>
             <th scope="col">Acciones</th>
             </tr>
         </thead>
         <tbody>
-            
             <tr>
                 <th scope="row">{{$peli->id}}</th>
-                <td><a href="{{route('pelicula.mostrar')}}">{{$peli->titulo}}</a></td>
-                <td>{{$peli->tipo}}</td>
+                <td>{{$peli->titulo}}</td>
+                <td>{{$peli->genero}}</td>
                 <td>{{$peli->actorPrincipal}}</td>
                 <td>{{$peli->actrizPrincipal}}</td>
                 <td>Acciones</td>
             </tr>
-            
         </tbody>
         </table>
-        {{$peliculas->links()}}
-    
+        
 @endsection

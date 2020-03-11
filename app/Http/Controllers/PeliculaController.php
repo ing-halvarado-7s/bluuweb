@@ -12,4 +12,9 @@ class PeliculaController extends Controller
         $peliculas = Pelicula::paginate(2);
         return view('pelicula.index', compact('peliculas'));
     }
+
+    function mostrar($id){
+        $peli = Pelicula::findOrfail($id);
+        return view('pelicula.mostrar', compact('peli'));
+    }
 }
