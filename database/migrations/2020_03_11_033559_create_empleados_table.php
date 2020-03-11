@@ -15,6 +15,11 @@ class CreateEmpleadosTable extends Migration
     {
         Schema::create('empleados', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('cedula',8);
+            $table->string('nombreCompleto',50);
+            $table->double('sueldo',8,2);
+            $table->date('fechaIngreso');
+            $table->integer('edad');
             $table->timestamps();
         });
     }
